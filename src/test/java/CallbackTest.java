@@ -26,7 +26,7 @@ class CallbackTest {
 
     @Test
     void shouldSubmitRequest() {
-        driver.get("http://localhost:9999");
+        driver.get("git add -f artifacts/app-order.jar");
         List<WebElement> elements = driver.findElements(By.className("input__control"));
         elements.get(0).sendKeys("Василий");
         elements.get(1).sendKeys("+79270000000");
