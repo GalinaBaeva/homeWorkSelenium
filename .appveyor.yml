@@ -11,4 +11,4 @@ install:
   - ps: $App = Start-Process -FilePath java -ArgumentList "-jar ./artifacts/app-order.jar" -PassThru
 
 build_script:
-  - gradlew build
+  - ps: gradlew build
