@@ -11,7 +11,7 @@ install:
   - ps: $App = Start-Process -FilePath java -ArgumentList "-jar ./artifacts/app-order.jar" -PassThru
 
 build_script:
-  - ps: gradlew test --info 
+  - ps: - gradlew test --info 
   
 on_finish:
   - ps: Stop-Process -Id $App.Id  # оставливаем SUT
