@@ -1,19 +1,20 @@
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.*;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.*;
-        import org.openqa.selenium.chrome.ChromeDriver;
-        import org.openqa.selenium.chrome.ChromeOptions;
-        import org.openqa.selenium.WebDriver;
-        import java.util.List;
-        import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.openqa.selenium.By;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.WebDriver;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 class CallbackTest {
     private WebDriver driver;
 
-    @BeforeAll
-    static void setUpAll(){
-        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
     }
 
     @BeforeEach
