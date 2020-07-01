@@ -20,6 +20,7 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     testCompile("io.github.bonigarcia:webdrivermanager:4.0.0")
 }
+
 test {
     useJUnitPlatform()
 }
