@@ -1,7 +1,10 @@
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.*;
         import org.openqa.selenium.By;
         import org.openqa.selenium.*;
         import org.openqa.selenium.chrome.ChromeDriver;
+        import org.openqa.selenium.chrome.ChromeOptions;
+        import org.openqa.selenium.WebDriver;
         import java.util.List;
         import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,7 +18,11 @@ class CallbackTest {
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
     }
 
     @AfterEach
